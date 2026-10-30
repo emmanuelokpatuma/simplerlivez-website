@@ -19,13 +19,27 @@ def links():
     return {"play": add(SITE["app"]["play_url"]), "ios": add(SITE["app"]["ios_url"])}
 
 
+def latest_posts(n=6):
+    """Latest blog articles from the blog's RSS feed (falls back to a fixed list offline)."""
+    import urllib.request, xml.etree.ElementTree as ET
+    try:
+        with urllib.request.urlopen(SITE["blog"] + "/feed.xml", timeout=15) as r:
+            root = ET.fromstring(r.read())
+        items = [{"title": i.findtext("title"), "url": i.findtext("link")} for i in root.iter("item")]
+        if items:
+            return items[:n]
+    except Exception as e:
+        print("feed fetch failed, using fallback:", e)
+    return SITE.get("fallback_posts", [])[:n]
+
+
 def main():
     if OUT.exists():
         shutil.rmtree(OUT)
     shutil.copytree(ROOT / "static", OUT)
     global CSSV
     CSSV = hashlib.md5((ROOT / "static/style.css").read_bytes()).hexdigest()[:8]
-    ctx = {"site": SITE, "links": links(), "year": dt.date.today().year}
+    ctx = {"site": SITE, "links": links(), "year": dt.date.today().year, "latest": latest_posts()}
     urls = []
     for p in sorted((ROOT / "pages").glob("*.html")):
         path = "/" if p.stem == "index" else f"/{p.stem}/"

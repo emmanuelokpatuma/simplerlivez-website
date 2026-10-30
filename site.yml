@@ -15,3 +15,9 @@ app:
 routinebuddy_url: https://routinebuddy.co.uk
 utm: utm_source=simplerlivez&utm_medium=website
 adsense_client: ca-pub-8861960280705077
+fallback_posts:
+  - {title: "Best Snacks for Type 2 Diabetes: Easy UK Ideas and Swaps", url: "https://blog.simplerlivez.com/best-snacks-for-type-2-diabetes/"}
+  - {title: "What Is Prediabetes and Can It Be Reversed? A UK Guide", url: "https://blog.simplerlivez.com/what-is-prediabetes-can-it-be-reversed/"}
+  - {title: "12 Diabetes-Friendly Breakfast Ideas (UK Guide)", url: "https://blog.simplerlivez.com/diabetes-friendly-breakfast-ideas/"}
+  - {title: "How Much Salt a Day? A UK Guide for High Blood Pressure", url: "https://blog.simplerlivez.com/how-much-salt-a-day-high-blood-pressure/"}
+  - {title: "How to Read UK Food Labels When You Have Diabetes", url: "https://blog.simplerlivez.com/how-to-read-food-labels-diabetes/"}

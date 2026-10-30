@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% set title = "SimplerLivez – Links" %}
+{% set description = "Download Dietary Insight, read the latest food and diabetes guides, and get in touch with SimplerLivez." %}
+{% set noindex = true %}
+{% block bodyclass %}links-page{% endblock %}
+{% block main %}
+<div class="lp">
+  <img class="lp-logo" src="/img/sl-icon-180.png" alt="SimplerLivez" width="88" height="88">
+  <h1>SimplerLivez</h1>
+  <p class="lp-sub">Smart, simple apps for everyday life. Know what’s on your plate in one photo.</p>
+  <a class="lp-btn lp-main" href="{{ links.ios }}&utm_campaign=linkinbio" rel="noopener">{% include "apple.svg" %}Get Dietary Insight on iPhone</a>
+  <a class="lp-btn lp-main" href="{{ links.play }}&utm_campaign=linkinbio" rel="noopener">{% include "play.svg" %}Get Dietary Insight on Android</a>
+  <p class="lp-h">Latest from the blog</p>
+  {% for p in latest %}<a class="lp-btn" href="{{ p.url }}?utm_source=linkinbio&utm_medium=social">{{ p.title }}</a>{% endfor %}
+  <a class="lp-btn" href="{{ site.blog }}/?utm_source=linkinbio&utm_medium=social">All articles →</a>
+  <p class="lp-h">More</p>
+  <a class="lp-btn" href="/dietary-insight/">How Dietary Insight works</a>
+  <a class="lp-btn" href="{{ site.routinebuddy_url }}" rel="noopener">RoutineBuddy for carers</a>
+  <a class="lp-btn" href="/consulting/">Cloud consulting &amp; training</a>
+  <a class="lp-btn" href="/support/#contact">Contact us</a>
+</div>
+{% endblock %}
