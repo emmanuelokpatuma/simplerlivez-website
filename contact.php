@@ -11,7 +11,7 @@ if (!$name || !$email || !$message) { http_response_code(400); echo '{"ok":false
 $to = 'hello@simplerlivez.com';
 $subject = "Website enquiry: $interest – $name";
 $body = "Name: $name\nEmail: $email\nCompany: $company\nInterest: $interest\n\n$message\n";
-$headers = "From: SimplerLivez website <no-reply@simplerlivez.com>\r\nReply-To: $email\r\nContent-Type: text/plain; charset=UTF-8";
-$ok = mail($to, $subject, $body, $headers);
+$headers = "From: SimplerLivez website <hello@simplerlivez.com>\r\nReply-To: $name <$email>\r\nContent-Type: text/plain; charset=UTF-8";
+$ok = mail($to, $subject, $body, $headers, '-fhello@simplerlivez.com');
 if (!$ok) http_response_code(500);
 echo json_encode(['ok' => $ok]);
