@@ -37,12 +37,13 @@
   </section>
 </div>
 
+<span id="products"></span>
 <section id="apps" class="alt">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow g">Our apps</span>
       <h2>Tools that make life simpler</h2>
-      <p class="lead">Each app does one job brilliantly, with no clutter and no learning curve.</p>
+      <p class="lead">Each app takes one everyday source of friction and makes it calmer and clearer. These three are just the beginning: around eight more are already in the works.</p>
     </div>
     <div class="apps">
       <article class="app feature reveal">
@@ -73,7 +74,7 @@
   </div>
 </section>
 
-<section>
+<section id="why">
   <div class="wrap">
     <div class="sec-head center reveal">
       <span class="eyebrow">Why SimplerLivez</span>
@@ -83,6 +84,11 @@
       <div class="pain reveal"><div class="num">01</div><h3>Too much to track</h3><p>Food, steps, routines, reminders. We bring the things you care about into one calm view, so nothing slips.</p></div>
       <div class="pain reveal"><div class="num">02</div><h3>Apps that overcomplicate</h3><p>No endless menus or manual logging. Point your camera, tap once, and get an answer you can act on.</p></div>
       <div class="pain reveal"><div class="num">03</div><h3>No time to plan</h3><p>Smart suggestions do the thinking for you, like a healthier swap when a meal doesn’t suit your goals.</p></div>
+    </div>
+    <div class="stats reveal">
+      <div><b>10s</b><span>to log a meal</span><small>Snap, scan, done.</small></div>
+      <div><b>£{{ site.app.price }}</b><span>a month for Premium</span><small>Cancel anytime.</small></div>
+      <div><b>100%</b><span>built in the UK</span><small>Designed and run locally.</small></div>
     </div>
   </div>
 </section>
@@ -183,4 +189,13 @@
     {% include "form.html" %}
   </div>
 </section>
+<section class="alt" id="legal" style="padding:64px 0">
+  <div class="wrap prose" style="max-width:860px">
+    <details class="legal" id="privacy-policy"><summary><span><small>Your privacy matters</small>Privacy Policy</span></summary><div class="body">{% include "legal/privacy-policy.html" %}</div></details>
+    <details class="legal" id="terms"><summary><span><small>The rules of the road</small>Terms &amp; Conditions</span></summary><div class="body">{% include "legal/terms.html" %}</div></details>
+  </div>
+</section>
+<script>
+(function(){const open=()=>{const h=location.hash.slice(1);const d=h&&document.getElementById(h);if(d&&d.tagName==='DETAILS'){d.open=true;setTimeout(()=>d.scrollIntoView(),50)}};open();addEventListener('hashchange',open)})();
+</script>
 {% endblock %}

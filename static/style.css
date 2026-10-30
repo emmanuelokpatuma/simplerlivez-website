@@ -236,3 +236,18 @@ textarea{min-height:130px;resize:vertical}
 .prose .body h2{font-size:26px}.prose .body{font-size:16.5px}
 
 form .btn{justify-self:start}
+
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:22px}
+.stats div{text-align:center;padding:26px;border-radius:var(--radius);background:var(--leaf-soft)}
+.stats b{display:block;font-family:var(--serif);font-size:48px;line-height:1.05;color:var(--green)}
+.stats span{display:block;font-weight:700;margin-top:6px}.stats small{color:var(--muted);font-size:14px}
+@media (max-width:820px){.stats{grid-template-columns:1fr}}
+.legal{background:var(--card);border:1px solid var(--line);border-radius:18px;margin:14px 0;padding:0}
+.legal summary{cursor:pointer;list-style:none;padding:22px 26px;display:flex;justify-content:space-between;align-items:center;font-family:var(--serif);font-size:24px;font-weight:700}
+.legal summary::-webkit-details-marker{display:none}
+.legal summary small{display:block;font-family:var(--sans);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--green-2);font-weight:800}
+.legal summary::after{content:"+";font-size:28px;color:var(--green-2)}
+.legal[open] summary::after{content:"–"}
+.legal .body{padding:0 26px 22px;font-size:15.5px;color:var(--muted)}
+.legal .body h2,.prose .body h2{font-size:21px;color:var(--ink);margin:26px 0 8px}
+.prose .body ul{padding-left:22px}
