@@ -221,7 +221,7 @@ textarea{min-height:130px;resize:vertical}
 /* footer */
 .foot{background:#0b1a12;color:#c9d4cc;padding:64px 0 28px;font-size:15px}
 .foot .brand{color:#fff}
-.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.2fr;gap:32px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.2fr 1fr;gap:32px}
 .foot-about p{max-width:360px;margin:16px 0}
 .foot a{color:#c9d4cc;text-decoration:none}
 .foot-grid > div:not(.foot-about) a{display:block;margin:6px 0}

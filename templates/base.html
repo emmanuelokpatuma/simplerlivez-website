@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="/style.css">
 {% if site.adsense_client %}<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.adsense_client }}" crossorigin="anonymous"></script>{% endif %}
 <script type="application/ld+json">{{ {"@context":"https://schema.org","@graph":[
- {"@type":"Organization","@id":site.url~"/#org","name":site.legal_name,"alternateName":site.name,"url":site.url~"/","logo":site.url~"/img/sl-icon-512.png","email":site.email,"slogan":site.tagline,"founder":{"@type":"Person","name":site.founder},"address":{"@type":"PostalAddress","addressLocality":"Harrogate","addressCountry":"GB"}},
+ {"@type":"Organization","@id":site.url~"/#org","name":site.legal_name,"alternateName":site.name,"url":site.url~"/","logo":site.url~"/img/sl-icon-512.png","email":site.email,"slogan":site.tagline,"sameAs":[site.social.facebook,site.social.instagram],"founder":{"@type":"Person","name":site.founder},"address":{"@type":"PostalAddress","addressLocality":"Harrogate","addressCountry":"GB"}},
  {"@type":"WebSite","@id":site.url~"/#website","name":site.name,"url":site.url~"/","inLanguage":site.lang,"publisher":{"@id":site.url~"/#org"}}
 ]}|tojson }}</script>
 {% block schema %}{% endblock %}
@@ -59,6 +59,7 @@
       </div>
       <div><p class="foot-h">Apps</p><a href="/dietary-insight/">Dietary Insight</a><a href="{{ site.routinebuddy_url }}" rel="noopener">RoutineBuddy</a><a href="/#apps">Smart Count <em>(coming soon)</em></a></div>
       <div><p class="foot-h">Company</p><a href="/#about">About</a><a href="/consulting/">Consulting &amp; training</a><a href="{{ site.blog }}">Blog</a><a href="/support/">Support</a><a href="/#contact">Contact</a></div>
+      <div><p class="foot-h">Follow</p><a href="{{ site.social.facebook }}" rel="noopener">Facebook</a><a href="{{ site.social.instagram }}" rel="noopener">Instagram</a></div>
       <div><p class="foot-h">Legal</p><a href="/privacy-policy/">Privacy policy</a><a href="/terms/">Terms &amp; conditions</a><a href="mailto:{{ site.email }}">{{ site.email }}</a></div>
     </div>
     <p class="fine">© {{ year }} {{ site.legal_name }}. Made to make life easier.</p>
