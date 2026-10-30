@@ -23,3 +23,7 @@ jobs:
           publish_branch: deploy
           publish_dir: ./public
           force_orphan: false
+      - name: Notify Bing and other search engines (IndexNow)
+        if: github.event_name == 'push'
+        run: sleep 90 && python indexnow.py
+        continue-on-error: true
