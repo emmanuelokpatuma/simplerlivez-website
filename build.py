@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build simplerlivez.com into ./public. Each file in pages/ is a Jinja template
 that extends base.html and sets title/description/path via {% set %}."""
-import datetime as dt, re, shutil
+import datetime as dt, hashlib, re, shutil
 from pathlib import Path
 import yaml
 from jinja2 import Environment, FileSystemLoader, select_autoescape
@@ -23,11 +23,14 @@ def main():
     if OUT.exists():
         shutil.rmtree(OUT)
     shutil.copytree(ROOT / "static", OUT)
+    global CSSV
+    CSSV = hashlib.md5((ROOT / "static/style.css").read_bytes()).hexdigest()[:8]
     ctx = {"site": SITE, "links": links(), "year": dt.date.today().year}
     urls = []
     for p in sorted((ROOT / "pages").glob("*.html")):
         path = "/" if p.stem == "index" else f"/{p.stem}/"
         html = env.get_template(p.name).render(**ctx, path=path)
+        html = html.replace('href="/style.css"', f'href="/style.css?v={CSSV}"')
         dest = OUT / ("index.html" if path == "/" else "404.html" if p.stem == "404" else f"{p.stem}/index.html")
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(html, encoding="utf-8")

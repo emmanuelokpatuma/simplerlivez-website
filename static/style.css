@@ -251,3 +251,7 @@ form .btn{justify-self:start}
 .legal .body{padding:0 26px 22px;font-size:15.5px;color:var(--muted)}
 .legal .body h2,.prose .body h2{font-size:21px;color:var(--ink);margin:26px 0 8px}
 .prose .body ul{padding-left:22px}
+.founder.two{grid-template-columns:1fr 1fr}
+@media (max-width:860px){.founder.two{grid-template-columns:1fr}}
+.svc{grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr))}
+@media (max-width:420px){.hero h1{font-size:38px}.btns .btn{width:100%;justify-content:center}.store{flex:1 1 auto;justify-content:center}}
