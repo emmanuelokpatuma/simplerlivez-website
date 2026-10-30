@@ -255,3 +255,14 @@ form .btn{justify-self:start}
 @media (max-width:860px){.founder.two{grid-template-columns:1fr}}
 .svc{grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr))}
 @media (max-width:420px){.hero h1{font-size:38px}.btns .btn{width:100%;justify-content:center}.store{flex:1 1 auto;justify-content:center}}
+.links-page .top,.links-page .foot{display:none}
+.links-page{background:radial-gradient(circle at 20% 0%,#d6f0c9,transparent 45%),radial-gradient(circle at 90% 30%,#ffe2c4,transparent 40%),var(--bg)}
+.lp{max-width:520px;margin:0 auto;padding:48px 20px 60px;text-align:center}
+.lp-logo{margin:0 auto 14px;border-radius:24px;box-shadow:var(--shadow)}
+.lp h1{font-size:34px;margin:0 0 6px}
+.lp-sub{color:var(--muted);margin:0 0 24px}
+.lp-h{font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--green-2);margin:28px 0 10px}
+.lp-btn{display:flex;align-items:center;justify-content:center;gap:10px;padding:16px 18px;margin:10px 0;border-radius:16px;background:var(--card);border:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:700;box-shadow:var(--shadow);transition:transform .15s}
+.lp-btn:hover{transform:translateY(-2px)}
+.lp-main{background:var(--green);color:#fff;border:0}
+@media (prefers-color-scheme:dark){.lp-main{color:#0d1510}}
