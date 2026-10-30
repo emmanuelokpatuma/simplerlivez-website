@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }}</title>
+<meta name="description" content="{{ description }}">
+<link rel="canonical" href="{{ site.url }}{{ path }}">
+{% if noindex %}<meta name="robots" content="noindex">{% else %}<meta name="robots" content="index, follow, max-image-preview:large">{% endif %}
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:locale" content="en_GB">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:url" content="{{ site.url }}{{ path }}">
+<meta property="og:image" content="{{ site.url }}/img/og.png">
+<meta property="og:image:alt" content="SimplerLivez – smart apps for simpler living">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="apple-itunes-app" content="app-id={{ site.app.ios_app_id }}">
+<meta name="theme-color" content="#0b1f4d">
+<link rel="icon" href="/img/sl-icon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/img/sl-icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="/style.css">
+{% if site.adsense_client %}<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.adsense_client }}" crossorigin="anonymous"></script>{% endif %}
+<script type="application/ld+json">{{ {"@context":"https://schema.org","@graph":[
+ {"@type":"Organization","@id":site.url~"/#org","name":site.legal_name,"alternateName":site.name,"url":site.url~"/","logo":site.url~"/img/sl-icon-512.png","email":site.email,"slogan":site.tagline,"founder":{"@type":"Person","name":site.founder},"address":{"@type":"PostalAddress","addressLocality":"Harrogate","addressCountry":"GB"}},
+ {"@type":"WebSite","@id":site.url~"/#website","name":site.name,"url":site.url~"/","inLanguage":site.lang,"publisher":{"@id":site.url~"/#org"}}
+]}|tojson }}</script>
+{% block schema %}{% endblock %}
+</head>
+<body class="{% block bodyclass %}{% endblock %}">
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="/" aria-label="SimplerLivez home"><img src="/img/sl-mark.png" alt="" width="38" height="38"><span><b>Simpler</b><i>Livez</i></span></a>
+    <input type="checkbox" id="menu" class="menu-toggle" aria-label="Open menu">
+    <label for="menu" class="burger" aria-hidden="true"><span></span></label>
+    <nav aria-label="Main">
+      <a href="/#apps"{% if path == '/' %} class="on"{% endif %}>Apps</a>
+      <a href="/dietary-insight/"{% if path == '/dietary-insight/' %} class="on"{% endif %}>Dietary Insight</a>
+      <a href="/consulting/"{% if path == '/consulting/' %} class="on"{% endif %}>Consulting &amp; training</a>
+      <a href="{{ site.blog }}">Blog</a>
+      <a href="/support/"{% if path == '/support/' %} class="on"{% endif %}>Support</a>
+      <a class="btn small" href="/#contact">Get in touch</a>
+    </nav>
+  </div>
+</header>
+<main id="main">{% block main %}{% endblock %}</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-about">
+        <a class="brand" href="/"><img src="/img/sl-mark.png" alt="" width="34" height="34" loading="lazy"><span><b>Simpler</b><i>Livez</i></span></a>
+        <p>{{ site.tagline }} Smart apps and practical tech help, built in Harrogate, UK.</p>
+        <p class="stores"><a class="store" href="{{ links.ios }}" rel="noopener">{% include "apple.svg" %}<span><small>Download on the</small>App Store</span></a><a class="store" href="{{ links.play }}" rel="noopener">{% include "play.svg" %}<span><small>Get it on</small>Google Play</span></a></p>
+      </div>
+      <div><p class="foot-h">Apps</p><a href="/dietary-insight/">Dietary Insight</a><a href="{{ site.routinebuddy_url }}" rel="noopener">RoutineBuddy</a><a href="/#apps">Smart Count <em>(coming soon)</em></a></div>
+      <div><p class="foot-h">Company</p><a href="/#about">About</a><a href="/consulting/">Consulting &amp; training</a><a href="{{ site.blog }}">Blog</a><a href="/support/">Support</a><a href="/#contact">Contact</a></div>
+      <div><p class="foot-h">Legal</p><a href="/privacy-policy/">Privacy policy</a><a href="/terms/">Terms &amp; conditions</a><a href="mailto:{{ site.email }}">{{ site.email }}</a></div>
+    </div>
+    <p class="fine">© {{ year }} {{ site.legal_name }}. Made to make life easier.</p>
+  </div>
+</footer>
+<script>
+document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>{const m=document.getElementById('menu');if(m)m.checked=false}));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

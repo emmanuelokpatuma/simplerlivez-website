@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% from "icons.html" import icon %}
+{% set title = "Dietary Insight – AI food scanner for allergies & diabetes" %}
+{% set description = "Snap a photo of any meal to see nutrients, allergens from your profile, harmful substances and a healthier swap. Free on iPhone and Android." %}
+{% block schema %}
+<script type="application/ld+json">{{ {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Dietary Insight","applicationCategory":"HealthApplication","operatingSystem":"iOS, Android","description":description,"url":site.url~"/dietary-insight/","downloadUrl":[site.app.ios_url,site.app.play_url],"publisher":{"@id":site.url~"/#org"},"offers":[{"@type":"Offer","name":"Free","price":"0","priceCurrency":"GBP"},{"@type":"Offer","name":"Premium (monthly)","price":site.app.price,"priceCurrency":"GBP"}]}|tojson }}</script>
+{% endblock %}
+{% block main %}
+<div class="wrap">
+  <section class="hero" style="padding-top:56px">
+    <div>
+      <span class="eyebrow g">Dietary Insight · Live now</span>
+      <h1>Know what’s on your plate <em>in one photo.</em></h1>
+      <p class="lead">Dietary Insight checks any meal against your allergies and health goals. You see the sugar, salt and fat that matter to you, anything harmful, and a healthier swap, in seconds.</p>
+      <div class="btns">
+        <a class="store" href="{{ links.ios }}" rel="noopener">{% include "apple.svg" %}<span><small>Download on the</small>App Store</span></a>
+        <a class="store" href="{{ links.play }}" rel="noopener">{% include "play.svg" %}<span><small>Get it on</small>Google Play</span></a>
+      </div>
+      <div class="trust"><span>{{ icon('check') }}Free to download</span><span>{{ icon('check') }}7 days of Premium included</span><span>{{ icon('uk') }}Made in the UK</span></div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="blob"></div>
+      <div class="phone"><img src="/img/app-result.webp" alt="" width="420" height="910" fetchpriority="high"></div>
+      <div class="float f1"><img src="/img/app-nutrients.webp" alt="" width="420" height="533"></div>
+      <div class="float f2"><img src="/img/app-swaps.webp" alt="" width="420" height="533"></div>
+      <div class="pill p1"><span class="dot"></span>Contains egg: allergy alert</div>
+      <div class="pill p2"><span class="dot g"></span>Lower-sugar swap</div>
+    </div>
+  </section>
+</div>
+
+<section class="alt">
+  <div class="wrap spot">
+    <div class="shots reveal" aria-hidden="true">
+      <img class="s1" src="/img/app-diary.webp" alt="" width="420" height="910" loading="lazy">
+      <img class="s2" src="/img/app-harm.webp" alt="" width="420" height="533" loading="lazy">
+      <img class="s3" src="/img/app-eggswap.webp" alt="" width="420" height="533" loading="lazy">
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">Made for real life</span>
+      <h2>Built for people who can’t afford to guess</h2>
+      <p class="lead" style="font-size:17.5px">Living with diabetes, high blood pressure or a food allergy means checking every meal. Restaurant plates and takeaways don’t come with labels, and calorie apps don’t know your health. Dietary Insight does.</p>
+      <div class="feat">
+        <div>{{ icon('camera') }}<p><b>Photo analysis</b><span>Point, snap, done. No typing or barcodes.</span></p></div>
+        <div>{{ icon('shield') }}<p><b>Personal allergen alerts</b><span>Flags ingredients from your saved allergies.</span></p></div>
+        <div>{{ icon('alert') }}<p><b>Harmful substances</b><span>Spots refined carbs, added sugars and trans fats.</span></p></div>
+        <div>{{ icon('swap') }}<p><b>Healthier swaps</b><span>A better option, not just a warning.</span></p></div>
+        <div>{{ icon('chart') }}<p><b>Key nutrients</b><span>Sugar, salt, saturated fat and cholesterol.</span></p></div>
+        <div>{{ icon('heart') }}<p><b>Health sync</b><span>Works with Apple Health and Health Connect.</span></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head center reveal"><span class="eyebrow g">Pricing</span><h2>Start free. Upgrade when you’re ready.</h2><p class="lead">Every new user gets 7 days of full Premium, then chooses.</p></div>
+    <div class="plans">
+      <div class="plan reveal">
+        <h3>Free</h3>
+        <div class="price">£0</div>
+        <p style="color:var(--muted)">Everything you need to start eating with confidence.</p>
+        <ul><li>3 AI scans a day</li><li>Up to 5 bonus scans a day via a short ad</li><li>Personal allergen alerts</li><li>Key nutrients &amp; cancer-risk check</li><li>Daily health summary &amp; food diary</li></ul>
+      </div>
+      <div class="plan pro reveal">
+        <h3>Premium</h3>
+        <div class="price">£{{ site.app.price }} <small>/ month</small></div>
+        <p style="color:var(--muted)">About half the price of the big calorie apps.</p>
+        <ul><li>Unlimited scans</li><li>Harmful-substance alerts</li><li>Healthier swaps</li><li>Compare foods &amp; net balance</li><li>Apple Health &amp; Health Connect sync</li><li>No ads</li></ul>
+      </div>
+    </div>
+    <div class="btns reveal" style="justify-content:center;margin-top:40px">
+      <a class="store" href="{{ links.ios }}" rel="noopener">{% include "apple.svg" %}<span><small>Download on the</small>App Store</span></a>
+      <a class="store" href="{{ links.play }}" rel="noopener">{% include "play.svg" %}<span><small>Get it on</small>Google Play</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="band reveal">
+      <div>
+        <span class="eyebrow">Free guides</span>
+        <h2 style="font-size:clamp(28px,3.4vw,40px)">Learn to eat well with your condition</h2>
+        <p class="lead" style="font-size:17px">Daily, practical articles from the Dietary Insight team, checked against NHS and Diabetes UK advice.</p>
+        <a class="btn" href="{{ site.blog }}">Visit the blog →</a>
+      </div>
+      <div class="chips">
+        <a href="{{ site.blog }}/how-to-read-food-labels-diabetes/">How to read food labels</a>
+        <a href="{{ site.blog }}/how-much-salt-a-day-high-blood-pressure/">How much salt a day?</a>
+        <a href="{{ site.blog }}/best-snacks-for-type-2-diabetes/">Best diabetes snacks</a>
+        <a href="{{ site.blog }}/diabetes-friendly-breakfast-ideas/">Breakfast ideas</a>
+      </div>
+    </div>
+    <p class="note center" style="margin-top:28px">Dietary Insight gives estimates and general guidance, not medical advice. Always follow your GP, diabetes nurse or dietitian, and check the full label if you have an allergy.</p>
+  </div>
+</section>
+{% endblock %}

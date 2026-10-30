@@ -1,0 +1,32 @@
+<form class="reveal" id="contact-form" action="/contact.php" method="post">
+  <div class="row">
+    <label>Your name<input name="name" required autocomplete="name"></label>
+    <label>Email<input name="email" type="email" required autocomplete="email"></label>
+  </div>
+  <div class="row">
+    <label>Company or organisation <span style="font-weight:400;color:var(--muted)">(optional)</span><input name="company" autocomplete="organization"></label>
+    <label>I’m interested in
+      <select name="interest" id="interest">
+        <option>Dietary Insight</option>
+        <option>RoutineBuddy</option>
+        <option>Smart Count waitlist</option>
+        <option>Cloud consulting</option>
+        <option>Training &amp; partnerships</option>
+        <option>Something else</option>
+      </select>
+    </label>
+  </div>
+  <label>Message<textarea name="message" required></textarea></label>
+  <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <button class="btn" type="submit">Send message</button>
+  <p class="ok" id="form-ok" role="status">Thanks, your message is on its way. We’ll reply within a couple of days.</p>
+  <p class="note">We’ll only use your details to reply to you. See our <a href="/privacy-policy/">privacy policy</a>.</p>
+</form>
+<script>
+document.querySelectorAll('[data-interest]').forEach(a=>a.addEventListener('click',()=>{const s=document.getElementById('interest');if(s)s.value=a.dataset.interest}));
+const q=new URLSearchParams(location.search).get('interest');if(q){const s=document.getElementById('interest');if(s)s.value=q}
+const f=document.getElementById('contact-form');
+if(f)f.addEventListener('submit',async e=>{e.preventDefault();const b=f.querySelector('button');b.disabled=true;b.textContent='Sending…';
+ try{const r=await fetch(f.action,{method:'POST',body:new FormData(f)});if(!r.ok)throw 0;f.querySelectorAll('input,select,textarea').forEach(x=>{if(x.name!=='interest')x.value=''});document.getElementById('form-ok').style.display='block';b.textContent='Sent ✓'}
+ catch(_){location.href='mailto:{{ site.email }}?subject='+encodeURIComponent('Website enquiry: '+f.interest.value)+'&body='+encodeURIComponent(f.message.value+'\n\n'+f.name.value)}});
+</script>

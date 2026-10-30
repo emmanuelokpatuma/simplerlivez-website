@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% from "icons.html" import icon %}
+{% set title = "Support – SimplerLivez" %}
+{% set description = "Get help with Dietary Insight, RoutineBuddy or our consulting and training services. A real person reads every message." %}
+{% block main %}
+<div class="wrap">
+  <section class="page-hero">
+    <span class="eyebrow g">Support</span>
+    <h1>How can we help?</h1>
+    <p class="lead">A real person reads every message. Email <a href="mailto:{{ site.email }}"><b>{{ site.email }}</b></a> or use the <a href="/#contact">contact form</a>, and we’ll point you to the right person.</p>
+  </section>
+  <div class="cards2" style="margin-bottom:72px">
+    <div class="pain reveal">{{ icon('chat') }}<h3>App support</h3><p>Setting up, your account, and getting the most out of Dietary Insight or RoutineBuddy.</p></div>
+    <div class="pain reveal">{{ icon('cloud') }}<h3>Consulting &amp; cloud</h3><p>Cloud infrastructure, Kubernetes and DevOps projects, new or ongoing.</p></div>
+    <div class="pain reveal">{{ icon('cap') }}<h3>Training &amp; partnerships</h3><p>Workshops, institution partnerships and team upskilling.</p></div>
+    <div class="pain reveal">{{ icon('mail') }}<h3>Something else</h3><p>Partnership ideas, press, feedback or general questions.</p></div>
+  </div>
+</div>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head center reveal"><span class="eyebrow">What happens next</span><h2>From message to answer</h2></div>
+    <div class="steps">
+      <div class="step reveal"><h3>Send a note</h3><p>Tell us your name, the app or service, and what you’re trying to do.</p></div>
+      <div class="step reveal"><h3>We route it</h3><p>A person reads your message and passes it to the best person to help.</p></div>
+      <div class="step reveal"><h3>We reply</h3><p>Usually within a couple of days, often sooner. Live app issues come first.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head center reveal"><span class="eyebrow g">Common questions</span><h2>Quick answers</h2></div>
+    <div class="faq reveal">
+      <details open><summary>Are the apps free?</summary><p>RoutineBuddy is free for carers and support workers. Dietary Insight is free to download with 3 scans a day, and every new user gets 7 days of Premium. Premium is £{{ site.app.price }} a month.</p></details>
+      <details><summary>How do I report a bug?</summary><p>Email {{ site.email }} with the app name, your phone model and what happened. A screenshot helps a lot.</p></details>
+      <details><summary>How do I cancel Premium?</summary><p>Subscriptions are managed by your app store. On iPhone go to Settings → your name → Subscriptions. On Android open Google Play → profile → Payments &amp; subscriptions → Subscriptions.</p></details>
+      <details><summary>Can I ask you to delete my data?</summary><p>Yes. Email {{ site.email }} from the address linked to your account. Our <a href="/privacy-policy/">privacy policy</a> explains your rights.</p></details>
+      <details><summary>Do you offer ongoing consulting support?</summary><p>Yes, for follow-up questions, reviews or a handover to your in-house team.</p></details>
+    </div>
+    <div class="btns reveal" style="justify-content:center;margin-top:36px"><a class="btn" href="mailto:{{ site.email }}">{% raw %}{% endraw %}Email support</a><a class="btn alt" href="/#contact">Use the contact form</a></div>
+  </div>
+</section>
+{% endblock %}

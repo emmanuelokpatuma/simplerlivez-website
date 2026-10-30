@@ -1,0 +1,186 @@
+{% extends "base.html" %}
+{% from "icons.html" import icon %}
+{% set title = "SimplerLivez – Smart apps for simpler living" %}
+{% set description = "Smart, simple apps for everyday life: Dietary Insight checks your meals in a photo, RoutineBuddy helps carers. Plus cloud consulting and training." %}
+{% block schema %}
+<script type="application/ld+json">{{ {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+ {"@type":"Question","name":"Is Dietary Insight free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every new user gets 7 days of Premium free, then keeps the free plan with 3 AI scans a day. Premium is £3.99 a month for unlimited scans and extra health features."}},
+ {"@type":"Question","name":"What does Dietary Insight Premium include?","acceptedAnswer":{"@type":"Answer","text":"Unlimited scans, harmful-substance alerts, healthier swaps, food comparison, net balance, Apple Health and Health Connect sync, and no ads."}},
+ {"@type":"Question","name":"Which devices are supported?","acceptedAnswer":{"@type":"Answer","text":"Dietary Insight is available for iPhone on the App Store and for Android phones on Google Play."}}
+]}|tojson }}</script>
+{% endblock %}
+{% block main %}
+<div class="wrap">
+  <section class="hero" style="padding-top:64px">
+    <div>
+      <span class="eyebrow">{{ site.tagline }}</span>
+      <h1>Simpler living, powered by <em>smart apps.</em></h1>
+      <p class="lead">We build calm, intelligent apps that make everyday life easier, starting with knowing exactly what’s on your plate. One photo is all it takes.</p>
+      <div class="btns">
+        <a class="btn" href="/dietary-insight/">Try Dietary Insight free →</a>
+        <a class="btn alt" href="#apps">Explore our apps</a>
+      </div>
+      <div class="trust">
+        <span>{{ icon('uk') }}Built in Harrogate, UK</span>
+        <span>{{ icon('lock') }}Privacy-first</span>
+        <span>{{ icon('check') }}Live on iPhone &amp; Android</span>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="blob"></div>
+      <div class="phone"><img src="/img/app-result.webp" alt="" width="420" height="910" fetchpriority="high"></div>
+      <div class="float f1"><img src="/img/app-swaps.webp" alt="" width="420" height="533"></div>
+      <div class="float f2"><img src="/img/app-harm.webp" alt="" width="420" height="533"></div>
+      <div class="pill p1"><span class="dot"></span>Allergen check</div>
+      <div class="pill p2"><span class="dot g"></span>Healthier swap found</div>
+    </div>
+  </section>
+</div>
+
+<section id="apps" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow g">Our apps</span>
+      <h2>Tools that make life simpler</h2>
+      <p class="lead">Each app does one job brilliantly, with no clutter and no learning curve.</p>
+    </div>
+    <div class="apps">
+      <article class="app feature reveal">
+        <div class="body">
+          <span class="status live">● Live now</span>
+          <h3>Dietary Insight</h3>
+          <p>Snap a photo of any meal. See the nutrients that matter to you, allergens from your profile, harmful substances and a healthier swap, in seconds.</p>
+          <ul><li>AI photo nutrition analysis</li><li>Personal allergen alerts</li><li>Healthier swaps &amp; food diary</li><li>Steps, reminders &amp; daily insights</li></ul>
+          <a class="more" href="/dietary-insight/">See how it works →</a>
+        </div>
+        <img class="shot" src="/img/app-home.webp" alt="Dietary Insight app home screen" width="420" height="910" loading="lazy">
+      </article>
+      <article class="app reveal">
+        <span class="status beta">Private beta</span>
+        <div class="ico">{{ icon('calendar') }}</div>
+        <h3>RoutineBuddy</h3>
+        <p>Free picture schedules and tap-to-speak boards that help carers and support workers build calm, predictable routines.</p>
+        <a class="more" href="{{ site.routinebuddy_url }}" rel="noopener">Visit RoutineBuddy →</a>
+      </article>
+      <article class="app reveal">
+        <span class="status soon">In development</span>
+        <div class="ico">{{ icon('box') }}</div>
+        <h3>Smart Count</h3>
+        <p>AI-assisted stock counting and audits for small businesses. Count faster, catch mistakes, and stop doing inventory on paper.</p>
+        <a class="more" href="#contact" data-interest="Smart Count waitlist">Join the waitlist →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Why SimplerLivez</span>
+      <h2>Life is busy. Your apps shouldn’t be.</h2>
+    </div>
+    <div class="pains">
+      <div class="pain reveal"><div class="num">01</div><h3>Too much to track</h3><p>Food, steps, routines, reminders. We bring the things you care about into one calm view, so nothing slips.</p></div>
+      <div class="pain reveal"><div class="num">02</div><h3>Apps that overcomplicate</h3><p>No endless menus or manual logging. Point your camera, tap once, and get an answer you can act on.</p></div>
+      <div class="pain reveal"><div class="num">03</div><h3>No time to plan</h3><p>Smart suggestions do the thinking for you, like a healthier swap when a meal doesn’t suit your goals.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow g">How it works</span>
+      <h2>Get started in three steps</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><h3>Download</h3><p>Get Dietary Insight free on the App Store or Google Play. Every new user gets 7 days of Premium included.</p></div>
+      <div class="step reveal"><h3>Snap or set up</h3><p>Add your allergies and health goals once, then take a photo of any meal: home-cooked, takeaway or restaurant.</p></div>
+      <div class="step reveal"><h3>See your insights</h3><p>Get nutrients, allergen alerts and a healthier swap in seconds, and watch your daily patterns build over time.</p></div>
+    </div>
+    <div class="btns reveal" style="justify-content:center;margin-top:40px">
+      <a class="store" href="{{ links.ios }}" rel="noopener">{% include "apple.svg" %}<span><small>Download on the</small>App Store</span></a>
+      <a class="store" href="{{ links.play }}" rel="noopener">{% include "play.svg" %}<span><small>Get it on</small>Google Play</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap founder">
+    <figure class="reveal"><img src="/img/sl-sign.webp" alt="SimplerLivez Ltd logo – Where Simplicity Meets Innovation" width="720" height="720" loading="lazy"></figure>
+    <div class="reveal">
+      <span class="eyebrow">Our story</span>
+      <h2>Built by an engineer who wanted simpler tools</h2>
+      <blockquote>Emmanuel lives with type 2 diabetes and high blood pressure. Dietary Insight started as the tool he needed for himself.</blockquote>
+      <p class="lead" style="font-size:17px">SimplerLivez is a UK technology company built on innovation, collaboration, consulting and training. We pair nearly a decade of cloud and back-end engineering with a simple rule: if it isn’t easy to use, it isn’t finished.</p>
+      <div class="sig"><img src="/img/sl-mark.png" alt="" width="44" height="44" style="border-radius:12px" loading="lazy"><div><b>{{ site.founder }}</b>Founder, {{ site.legal_name }}</div></div>
+      <div class="badges"><span>AWS certified</span><span>Infrastructure &amp; back-end engineer</span><span>AWS · GCP · Azure</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow g">Consulting &amp; training</span>
+      <h2>How SimplerLivez helps</h2>
+      <p class="lead">Beyond our apps, we help startups, teams and the next generation of engineers build on solid cloud foundations.</p>
+    </div>
+    <div class="svc">
+      <a class="reveal" href="/consulting/#startups">{{ icon('rocket') }}<h3>Startup technical support</h3><p>Hands-on help taking your product from idea to a reliable launch.</p></a>
+      <a class="reveal" href="/consulting/#cloud">{{ icon('pound') }}<h3>Cloud cost optimisation</h3><p>Find the waste in your cloud bill. Past clients have cut costs by up to 60%.</p></a>
+      <a class="reveal" href="/consulting/#cloud">{{ icon('cube') }}<h3>Cloud &amp; Kubernetes consultancy</h3><p>Infrastructure, containers, DevOps and databases across AWS, GCP and Azure.</p></a>
+      <a class="reveal" href="/consulting/#training">{{ icon('cap') }}<h3>Teaching &amp; career training</h3><p>Practical cloud and DevOps training for teams, institutions and young people.</p></a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="band reveal">
+      <div>
+        <span class="eyebrow">From the blog</span>
+        <h2 style="font-size:clamp(28px,3.4vw,40px)">Eat well with diabetes, high blood pressure and food allergies</h2>
+        <p class="lead" style="font-size:17px">A new practical guide every day, checked against NHS and Diabetes UK advice.</p>
+        <a class="btn" href="{{ site.blog }}">Read the blog →</a>
+      </div>
+      <div class="chips">
+        <a href="{{ site.blog }}/diabetes-friendly-breakfast-ideas/">Diabetes breakfast ideas</a>
+        <a href="{{ site.blog }}/best-snacks-for-type-2-diabetes/">Best snacks for type 2 diabetes</a>
+        <a href="{{ site.blog }}/how-much-salt-a-day-high-blood-pressure/">How much salt a day?</a>
+        <a href="{{ site.blog }}/how-to-read-food-labels-diabetes/">Reading food labels</a>
+        <a href="{{ site.blog }}/what-is-prediabetes-can-it-be-reversed/">What is prediabetes?</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="faq">
+  <div class="wrap">
+    <div class="sec-head center reveal"><span class="eyebrow g">FAQ</span><h2>Questions, answered</h2></div>
+    <div class="faq reveal">
+      <details open><summary>Is Dietary Insight free?</summary><p>Yes. Every new user gets 7 days of Premium free. After that you keep the free plan with 3 AI scans a day, plus allergen alerts, key nutrients and a daily health summary. Premium is £{{ site.app.price }} a month.</p></details>
+      <details><summary>What does Premium include?</summary><p>Unlimited scans, harmful-substance alerts, healthier swaps, food comparison, net balance, Apple Health and Health Connect sync, and no ads.</p></details>
+      <details><summary>Is my data private?</summary><p>We only use your data to run the app and give you your results. You can ask us to delete your data at any time by emailing <a href="mailto:{{ site.email }}">{{ site.email }}</a>. Our <a href="/privacy-policy/">privacy policy</a> explains everything in plain English.</p></details>
+      <details><summary>Which devices are supported?</summary><p>Dietary Insight is available for iPhone on the App Store and for Android phones on Google Play.</p></details>
+      <details><summary>Is Dietary Insight medical advice?</summary><p>No. It gives helpful estimates and general guidance to support everyday choices. Always follow advice from your GP, diabetes nurse or dietitian, and check food labels if you have an allergy.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact">
+    <div class="cta-dark reveal">
+      <span class="eyebrow" style="background:rgba(255,255,255,.14);color:#fff">Let’s talk</span>
+      <h2>Start living simpler today.</h2>
+      <p>Questions about our apps, a cloud project, training for your team, or joining the Smart Count waitlist? A real person reads every message.</p>
+      <p style="margin-top:22px"><a href="mailto:{{ site.email }}"><b>{{ site.email }}</b></a></p>
+      <div class="btns" style="margin-top:24px">
+        <a class="store" style="background:#fff;color:#0d1510!important" href="{{ links.ios }}" rel="noopener">{% include "apple.svg" %}<span><small>Download on the</small>App Store</span></a>
+        <a class="store" style="background:#fff;color:#0d1510!important" href="{{ links.play }}" rel="noopener">{% include "play.svg" %}<span><small>Get it on</small>Google Play</span></a>
+      </div>
+    </div>
+    {% include "form.html" %}
+  </div>
+</section>
+{% endblock %}

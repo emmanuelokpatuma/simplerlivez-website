@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% from "icons.html" import icon %}
+{% set title = "Cloud consulting, Kubernetes & DevOps training – SimplerLivez" %}
+{% set description = "Cloud infrastructure, Kubernetes and DevOps consulting across AWS, GCP and Azure, cloud cost optimisation, and hands-on training for teams and young people." %}
+{% block main %}
+<div class="wrap">
+  <section class="page-hero">
+    <span class="eyebrow g">Consulting &amp; training</span>
+    <h1>Serious engineering underneath. <em style="color:var(--green-2)">Friendly on the surface.</em></h1>
+    <p class="lead">SimplerLivez helps startups, companies and institutions build and run reliable cloud systems, and trains the people who look after them.</p>
+    <div class="btns"><a class="btn" href="/?interest=Cloud consulting#contact" data-interest="Cloud consulting">Start a conversation</a><a class="btn alt" href="#training">Training &amp; partnerships</a></div>
+  </section>
+</div>
+
+<section class="alt" id="cloud">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Consulting</span><h2>Cloud, Kubernetes &amp; DevOps</h2><p class="lead">Practical help from an AWS-certified infrastructure and back-end engineer with nearly a decade of experience, including work with banking clients.</p></div>
+    <div class="svc">
+      <div class="reveal">{{ icon('cloud') }}<h3>Cloud infrastructure</h3><p>Design, migration and day-to-day running on AWS, GCP and Azure, written as code with Terraform.</p></div>
+      <div class="reveal">{{ icon('cube') }}<h3>Kubernetes &amp; containers</h3><p>Containerise your services and run them on a stable, well-monitored Kubernetes platform.</p></div>
+      <div class="reveal">{{ icon('chart') }}<h3>Back-end, DevOps &amp; databases</h3><p>CI/CD pipelines, observability, databases and the plumbing that keeps products online.</p></div>
+      <div class="reveal">{{ icon('pound') }}<h3>Cloud cost optimisation</h3><p>Find and remove waste in your cloud bill. Past clients have cut costs by up to 60%.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="startups">
+  <div class="wrap founder" style="grid-template-columns:1fr 1fr">
+    <div class="reveal">
+      <span class="eyebrow g">For startups</span>
+      <h2>Startup technical support</h2>
+      <p class="lead" style="font-size:17.5px">From first prototype to a launch you can trust. We help founders choose the right stack, set up hosting and deployment, and avoid the expensive mistakes that slow young products down.</p>
+      <a class="btn" href="/?interest=Cloud consulting#contact" data-interest="Cloud consulting">Talk about your product</a>
+    </div>
+    <div class="svc reveal" style="grid-template-columns:1fr">
+      <div>{{ icon('rocket') }}<h3>Launch-ready architecture</h3><p>Simple, scalable foundations that fit your budget today and grow with you.</p></div>
+      <div>{{ icon('users') }}<h3>Ongoing support</h3><p>Follow-up reviews, questions and a clean handover to your in-house team.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="training">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Teaching &amp; training</span><h2>Building the next generation of engineers</h2><p class="lead">Hands-on learning that turns theory into job-ready skills. We have guided up to 10 people into cloud and DevOps roles.</p></div>
+    <div class="svc">
+      <div class="reveal">{{ icon('cap') }}<h3>Cloud &amp; DevOps career training</h3><p>Structured, practical training for people moving into cloud and DevOps careers.</p></div>
+      <div class="reveal">{{ icon('users') }}<h3>Team upskilling</h3><p>Workshops tailored to your team’s stack, from Terraform to Kubernetes.</p></div>
+      <div class="reveal">{{ icon('shield') }}<h3>Institution partnerships</h3><p>Courses and projects with universities, colleges and bootcamps.</p></div>
+      <div class="reveal">{{ icon('heart') }}<h3>Free tech training for young people</h3><p>Opening doors into tech for young people who might not otherwise get the chance.</p></div>
+    </div>
+    <div class="btns reveal" style="margin-top:36px"><a class="btn" href="/?interest=Training & partnerships#contact" data-interest="Training & partnerships">Ask about training</a></div>
+  </div>
+</section>
+{% endblock %}

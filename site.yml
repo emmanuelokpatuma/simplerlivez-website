@@ -1,0 +1,17 @@
+name: SimplerLivez
+legal_name: SimplerLivez Ltd
+tagline: Where simplicity meets innovation.
+url: https://simplerlivez.com
+email: hello@simplerlivez.com
+blog: https://blog.simplerlivez.com
+lang: en-GB
+founder: Emmanuel Okpatuma
+app:
+  name: Dietary Insight
+  price: "3.99"
+  play_url: https://play.google.com/store/apps/details?id=com.emergent.dietaryinsightcam.wtjahd
+  ios_url: https://apps.apple.com/app/dietary-insight-cam/id6814602853
+  ios_app_id: "6814602853"
+routinebuddy_url: https://routinebuddy.co.uk
+utm: utm_source=simplerlivez&utm_medium=website
+adsense_client: ca-pub-8861960280705077
