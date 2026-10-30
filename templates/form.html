@@ -8,6 +8,7 @@
     <label>I’m interested in
       <select name="interest" id="interest">
         <option>Dietary Insight</option>
+        <option>App support</option>
         <option>RoutineBuddy</option>
         <option>Smart Count waitlist</option>
         <option>Cloud consulting</option>
@@ -24,7 +25,7 @@
 </form>
 <script>
 document.querySelectorAll('[data-interest]').forEach(a=>a.addEventListener('click',()=>{const s=document.getElementById('interest');if(s)s.value=a.dataset.interest}));
-const q=new URLSearchParams(location.search).get('interest');if(q){const s=document.getElementById('interest');if(s)s.value=q}
+const q=new URLSearchParams(location.search).get('interest')||(location.pathname.startsWith('/support')?'App support':'');if(q){const s=document.getElementById('interest');if(s)s.value=q}
 const f=document.getElementById('contact-form');
 if(f)f.addEventListener('submit',async e=>{e.preventDefault();const b=f.querySelector('button');b.disabled=true;b.textContent='Sending…';
  try{const r=await fetch(f.action,{method:'POST',body:new FormData(f)});if(!r.ok)throw 0;f.querySelectorAll('input,select,textarea').forEach(x=>{if(x.name!=='interest')x.value=''});document.getElementById('form-ok').style.display='block';b.textContent='Sent ✓'}

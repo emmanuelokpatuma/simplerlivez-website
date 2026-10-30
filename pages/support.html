@@ -7,7 +7,7 @@
   <section class="page-hero">
     <span class="eyebrow g">Support</span>
     <h1>How can we help?</h1>
-    <p class="lead">A real person reads every message. Email <a href="mailto:{{ site.email }}"><b>{{ site.email }}</b></a> or use the <a href="/#contact">contact form</a>, and we’ll point you to the right person.</p>
+    <p class="lead">A real person reads every message. Use the <a href="#contact">form below</a> or email <a href="mailto:{{ site.email }}"><b>{{ site.email }}</b></a>, and we’ll point you to the right person.</p>
   </section>
   <div class="cards2" style="margin-bottom:72px">
     <div class="pain reveal">{{ icon('chat') }}<h3>App support</h3><p>Setting up, your account, and getting the most out of Dietary Insight or RoutineBuddy.</p></div>
@@ -17,7 +17,19 @@
   </div>
 </div>
 
-<section class="alt">
+<section class="alt" id="contact">
+  <div class="wrap contact">
+    <div class="cta-dark reveal">
+      <span class="eyebrow" style="background:rgba(255,255,255,.14);color:#fff">Get help</span>
+      <h2>Send us a message</h2>
+      <p>Tell us which app or service you need help with and what you’re trying to do. For a bug, include your phone model and a short description.</p>
+      <p style="margin-top:22px">Prefer email? <a href="mailto:{{ site.email }}"><b>{{ site.email }}</b></a></p>
+    </div>
+    {% include "form.html" %}
+  </div>
+</section>
+
+<section>
   <div class="wrap">
     <div class="sec-head center reveal"><span class="eyebrow">What happens next</span><h2>From message to answer</h2></div>
     <div class="steps">
@@ -28,7 +40,7 @@
   </div>
 </section>
 
-<section>
+<section class="alt">
   <div class="wrap">
     <div class="sec-head center reveal"><span class="eyebrow g">Common questions</span><h2>Quick answers</h2></div>
     <div class="faq reveal">
@@ -38,7 +50,7 @@
       <details><summary>Can I ask you to delete my data?</summary><p>Yes. Email {{ site.email }} from the address linked to your account. Our <a href="/privacy-policy/">privacy policy</a> explains your rights.</p></details>
       <details><summary>Do you offer ongoing consulting support?</summary><p>Yes, for follow-up questions, reviews or a handover to your in-house team.</p></details>
     </div>
-    <div class="btns reveal" style="justify-content:center;margin-top:36px"><a class="btn" href="mailto:{{ site.email }}">{% raw %}{% endraw %}Email support</a><a class="btn alt" href="/#contact">Use the contact form</a></div>
+
   </div>
 </section>
 {% endblock %}
